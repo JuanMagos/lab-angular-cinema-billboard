@@ -1,0 +1,29 @@
+<span>Room {{movieId}}</span>
+<h2>{{ movieService.getMovie(movieId).title }}</h2>
+<section class="detail-container">
+  <div>
+    <img class ="poster" src="{{ movieService.getMovie(movieId).poster }}" alt="">
+  </div>
+  <div class="movie-details">
+    <p>Genres</p>
+    <ul *ngFor="let genre of movieService.getMovie(movieId).genres" > 
+      <li>{{ genre }}</li>
+    </ul>
+    <p>Year</p>
+    <ul>{{ movieService.getMovie(movieId).year }}</ul>
+    <p>Director</p> 
+    <ul>{{ movieService.getMovie(movieId).director }}</ul>
+    <p>Actors</p>
+    <ul *ngFor="let actor of movieService.getMovie(movieId).actors" > 
+      <li>{{ actor }}</li>
+    </ul>
+    <p>Schedule</p>
+    <ul *ngFor="let hour of movieService.getMovie(movieId).hours" > 
+      <li>{{ hour }}</li>
+    </ul>
+    <p>Synopsis</p>
+    <p>{{ movieService.getMovie(movieId).synopsis }}</p>
+  </div>
+</section>
+
+<button (click)="goToHome()"> home </button>

@@ -1,0 +1,9 @@
+<section class="movies-container">
+  <div *ngFor="let movie of theMovies.getMovies()">
+    <a [routerLink]="['/movie', movie.id]">
+      <h3>ROOM {{movie.room}}</h3>
+    </a>
+    <img class="poster" src="{{movie.poster}}" alt="{{movie.title}}">
+    <p>{{movie.title}}</p>
+  </div>
+</section>
